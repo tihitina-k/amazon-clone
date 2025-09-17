@@ -1,17 +1,17 @@
+import "./App.css";
+import CarouselEffect from "./Components/Carolusel/Carousel";
 
-
-import './App.css'
-import Header from './Components/Header/Header'
-
+import Header from "./Components/Header/Header";
+ 
+import React from "react";
 function App() {
-  
-
   return (
     <>
-<Header/>
+      <Header />
+      <CarouselEffect/>
       
     </>
-  )
+  );
 }
 
-export default App
+export default App;
