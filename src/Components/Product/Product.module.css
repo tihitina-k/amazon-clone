@@ -1,5 +1,55 @@
+.card_container{
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  color: black;
+text-decoration: none;
+  position: relative;
+}
 
-.productGrid {
+.card_container:hover .button{
+  display: block;
+}
+.card_container img{
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  object-fit: contain;
+}
+.button{
+  display: none;
+  padding: 5px, 10px;
+  font-weight: 700;
+  border: none;cursor: pointer;
+  background-color: var(--primary-color);
+  width: 100%;
+  margin: 10px,0;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.button:hover{
+background-color: var(--primary-shade);
+}
+
+.rating{
+  display: flex;
+  align-items: center;
+  padding: 10px,0;
+}
+.product_container{
+  display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+max-width: 1450px;
+margin: 100px auto 100px auto;
+gap: 50px;
+justify-items: center;}
+
+.product_container div{
+  margin: 0 auto;
+}
+/* .productGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
@@ -12,13 +62,13 @@
   border-radius: 8px;
   padding: 16px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .productCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .productImage {
@@ -31,13 +81,39 @@
 .productTitle {
   font-size: 1rem;
   font-weight: 500;
-  margin: 0 0 8px 0;
-  color: #333;
+  margin-bottom: 8px;
 }
 
 .productPrice {
   font-size: 1.1rem;
   font-weight: 600;
   color: #b12704;
+  margin-bottom: 8px;
 }
 
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.button {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f7ca00;
+}
+
+.cart {
+  margin: 20px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+} */

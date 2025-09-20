@@ -3,13 +3,13 @@
 export const CatagoryInfo = [
   {
     title: "Electronica",
-    name: "elctronics",
+    name: "electronics",
     imgLink:
       "https://m.media-amazon.com/images/I/81PQsxaQyLL._AC_UL480_QL65_.jpg",
   },
   {
     title: "Discovery fashion trends",
-    name: "women' clothing",
+    name: "women's clothing",
     imgLink:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFsuSuX3fZh-BR0vXkkLjj9Y0xB83x4bvg1w&s",
   },
