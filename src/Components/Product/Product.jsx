@@ -1,36 +1,37 @@
-
-
-import React, {useState, useEffect} from 'react'
-import axios from 'axios';
-import ProductCard from './ProductCard';
-import classes from './Product.module.css'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import ProductCard from "./ProductCard";
+import classes from "./Product.module.css";
 
 const Product = () => {
   const [Products, setProduct] = useState([]);
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products")
+    axios
+      .get("https://fakestoreapi.com/products")
       .then((res) => {
-        setProduct(res.data)
-      }
-      ).catch((err) => { console.log('error') })
-  
-  }, [])
-  
-  return (<div className={classes.product_container}>{Products?.map((singleproduct) => {
-    return <ProductCard product={singleproduct} key={singleproduct.id} />;
-    // <NumericFormat
-    //   value={2456981}
-    //   displayType="text"
-    //   thousandSeparator=","
-    //   prefix="$"
-    // />;
-  })}
-  </div>);
-}
+        setProduct(res.data);
+      })
+      .catch((err) => {
+        console.log("error");
+      });
+  }, []);
 
+  return (
+    <div className={classes.product_container}>
+      {Products?.map((singleproduct) => {
+        return <ProductCard product={singleproduct} key={singleproduct.id} />;
+        // <NumericFormat
+        //   value={2456981}
+        //   displayType="text"
+        //   thousandSeparator=","
+        //   prefix="$"
+        // />;
+      })}
+    </div>
+  );
+};
 
-export default Product
-
+export default Product;
 
 // import React, { useState, useEffect } from "react";
 // import ProductCard from "./ProductCard";

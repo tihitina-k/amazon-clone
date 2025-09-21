@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,12 +12,12 @@ const Header = () => {
       <div className={classes.Header_Container}>
         {/* Left Section: Logo */}
         <div className={classes.logo_Container}>
-          <a href="/">
+          <Link to="/">
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="amazon logo"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Delivery Info */}
@@ -55,24 +56,24 @@ const Header = () => {
         {/* Right Section */}
         <div className={classes.rightSection}>
           {/* Sign In */}
-          <a href="">
+          <Link to="">
             <div>
               <p>Sign In</p>
               <span>Account & Lists</span>
             </div>
-          </a>
+          </Link>
 
           {/* Orders */}
-          <a href="">
+          <Link to="/orders">
             <p>Returns</p>
             <span>& Orders</span>
-          </a>
+          </Link>
 
           {/* Cart */}
-          <a href="" className={classes.cart}>
+          <Link to="/cart" className={classes.cart}>
             <BiCart size={35} />
             <span>0</span>
-          </a>
+          </Link>
         </div>
       </div>
     </>
