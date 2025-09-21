@@ -2,31 +2,50 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import classes from "./Product.module.css";
+import Loader from "../Loader/Loader";
 
 const Product = () => {
   const [Products, setProduct] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
+  
   useEffect(() => {
+    
     axios
       .get("https://fakestoreapi.com/products")
       .then((res) => {
-        setProduct(res.data);
+        setProduct(res.data) 
+        setisLoading(false);
       })
+    
       .catch((err) => {
-        console.log("error");
-      });
+        console.log(err)
+        setisLoading(false)
+      })
+
+  
+        
+     
   }, []);
 
   return (
-    <div className={classes.product_container}>
-      {Products?.map((singleproduct) => {
-        return <ProductCard product={singleproduct} key={singleproduct.id} />;
-        // <NumericFormat
-        //   value={2456981}
-        //   displayType="text"
-        //   thousandSeparator=","
-        //   prefix="$"
-        // />;
-      })}
+    <div>
+      {isLoading? (
+        <Loader />
+      ) : (
+        <div className={classes.product_container}>
+          {Products?.map((singleproduct) => {
+            return (
+              <ProductCard product={singleproduct} key={singleproduct.id} />
+            );
+            // <NumericFormat
+            //   value={2456981}
+            //   displayType="text"
+            //   thousandSeparator=","
+            //   prefix="$"
+            // />;
+          })}
+        </div>
+      )}
     </div>
   );
 };
