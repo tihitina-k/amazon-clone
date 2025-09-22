@@ -26,10 +26,16 @@ const ProductDetail = () => {
 //  console.log(productId)
   return (
     <LayOut>
-      {isLoading ? (<Loader />) : (<ProductCard product={product}
-        flex={true}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ProductCard
+          product={product}
+          flex={true}
           renderDescription={true}
-     /> )  }
+          renderAddToCart={true}
+        />
+      )}
       {/* <ProductCard product = {product} /> */}
     </LayOut>
   );
